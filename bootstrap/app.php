@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->appendToGroup('web', \App\Http\Middleware\DemoBasicAuth::class);
+        $middleware->alias([
+            'cabinet.auth' => \App\Http\Middleware\RequireCabinetAuth::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

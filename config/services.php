@@ -35,4 +35,15 @@ return [
         ],
     ],
 
+    'yookassa' => [
+        'shop_id' => env('YOOKASSA_SHOP_ID'),
+        'secret_key' => env('YOOKASSA_SECRET_KEY'),
+    ],
+
+    'openai' => [
+        'api_key' => env('OPENAI_API_KEY'),
+        'model' => env('OPENAI_MODEL', 'gpt-4o-mini'),
+        'mock' => env('OPENAI_MOCK', false),
+    ],
+
 ];
